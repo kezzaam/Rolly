@@ -29,31 +29,46 @@ To build:
     <h4>The rolly neat dice generator</h4>
   </header>
   <main id="dice-generator">
-    <!-- Below section could be a modal ie click on question mark icon with tooltip 'How to use' -->
-    <section id="instructions">
-      <h5>How to use</h5>
-      <p>Instructions and suggestions here</p>
-      <a href="#">url to dice games list</a>
+
+    <!-- Expandable section - still to code js to show content -->
+    <section id="instructions" class="expandable-section">
+      <h5 class="expandable-heading">How to use</h5>
+      <article class="expandable-article">
+        <ul>
+          <li>Select the number of faces for your dice. 
+            This can be as simple as a coin toss (2 faces) 
+            or as complex as 144.</li>
+          <li>Select the number of dice you'd like to roll, from 1 - 10.</li>
+          <li>Click the button to roll the dice and see your results.</li>
+        </ul>
+        <p>Here is a list of dice games for some inspiration:</p>
+        <a href="https://www.awesomedice.com/pages/dice-games-the-ultimate-list">Dice Games</a>
+    </article>    
     </section>
+
     <section id="dice-options">
       <h5>Select Dice Options</h5>
       <!-- create js variable for each input value -->
-      <label for="dice-faces">Number of faces</label>
-      <input id="dice-faces" name="dice-faces" type="number" min="2" max="144">
-      <label for="dice-number">Number of dice</label>
-      <input id="dice-number" name="dice-number" type="number" min="1" max="10">
-
+      <label for="dice-faces">Number of faces:</label>
+      <input id="dice-faces" name="dice-faces" type="number" min="2" max="144" step="1" value="2">
+      <label for="dice-number">Number of dice:</label>
+      <input id="dice-number" name="dice-number" type="number" min="1" max="10" step="1" value="1">
     </section>
+
     <!-- decide on placeholder content for results area before initial roll -->
-    <section id="results">Results of dice roll here</section>
-    <section id="phrase">Random phrase here</section>
+    <section>
+      <h2 id="results">6</h2>
+    </section>
+    <section>
+      <quote id="phrase">"I'm on a roll!"</quote>
+    </section>
     <section id="button-box">
-      <button onclick="rollDice()">Let's Roll!</button>
+      <button onclick="rollDice()">Roll Dice</button>
     </section>
   </main>
   <footer>
     <p className="credits">
-      built by <a href="https://moondog.co.nz">moondog</a> 2023
+      built by <a href="https://moondog.co.nz">Keren Elizabeth</a> 2023
     </p>
   </footer>
   <script src="script.js"></script>

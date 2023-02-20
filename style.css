@@ -19,3 +19,164 @@ COLOURS
 
 /* import google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Teko:wght@300;400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Teko', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: #030e12;
+    background-color: #fcde67;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header,
+section,
+footer {
+    display: block;
+    text-align: center;
+    padding: 10px;
+}
+
+a {
+    color: #FF5722;
+}
+
+a:hover {
+    color: #5bccf6;
+}
+
+h1 {
+    font-family: 'Lobster Two', cursive;
+    font-size: 6rem;
+    font-weight: 700;
+    font-style: italic;
+    color: #FF5722;
+    line-height: 6.5rem;
+}
+
+h4 {
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: #030e12;
+    border: 2px solid;
+    padding: 0 20px;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+h5 {
+    font-size: 1.4rem;
+}
+
+.expandable-article {
+    display: none;
+    color: #ffffff;
+    background-color: #030e12;
+    max-width: 380px;
+    padding: 15px 30px;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0 0 20px 0;
+}
+
+.expandable-heading:hover {
+    cursor: pointer;
+    color: #5bccf6;
+}
+
+.expandable-heading::after {
+    content: "\25BC";
+    /* arrow icon */
+    font-size: 1rem;
+    display: inline-block;
+    margin-left: 5px;
+    transform: rotate(0);
+    transition: transform 0.3s;
+}
+
+.expandable-heading.expanded::after {
+    transform: rotate(180deg);
+}
+
+#dice-options {
+    border: 2px solid;
+    padding: 10px 20px 20px;
+    border-radius: 10px;
+}
+
+input {
+    font-family: 'Teko', sans-serif;
+    font-size: 1.4rem;
+    width: 40px;
+    padding-left: 10px;
+    margin-top: 10px;
+}
+
+input:first-of-type {
+    margin-right: 10px;
+}
+
+label {
+    font-size: 1.4rem;
+    padding: 0 5px;
+}
+
+label:last-of-type {
+    margin-left: 10px;
+}
+
+#results {
+    font-size: 3rem;
+    padding: 20px;
+    color:#FF5722;
+    border-radius: 10px;
+}
+
+#phrase {
+    font-family: 'Lobster Two', cursive;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.4rem;
+}
+
+button {
+    border-radius: 10px;
+    font-family: 'Teko', sans-serif;
+    font-size: 3rem;
+    padding: 20px 40px;
+    background-color: #5bccf6;
+    border: none;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+}
+
+button:hover {
+    color: #ffffff;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    transform: translateY(-5px);
+}
+
+button:active {
+    background-color: #FF5722;
+}
+
+footer {
+    font-size: 0.9rem;
+    font-weight: 400;
+}
