@@ -1,1 +1,21 @@
-/* css for dice generator */
+/* css for dice generator 
+
+FONTS
+    font-family: 'Lobster Two', cursive;
+    font-family: 'Teko', sans-serif;
+
+COLOURS
+    yellow #fcde67   
+    neon blue #5bccf6
+    black #030e12
+    rust #914433
+
+    Alternative colors to try:
+        #FFC107 bright orange
+        #FF5722 vibrant red 
+        #00E676 bright green 
+        #2196F3 light blue 
+*/
+
+/* import google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Teko:wght@300;400;500;600;700&display=swap');

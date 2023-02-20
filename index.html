@@ -1,1 +1,62 @@
-<!-- html for dice generator -->
+<!-- html for dice generator
+To build:
+  Header / Logo
+  Dropdown select form for dice options
+  // change number range
+  // change number array to add more dice
+  Results area where js functions output
+  // output random number based on variable range
+  of numbers and also able to do this for each array
+  item (for multiple dice up to 10)
+  // output random phrase from an array
+  Roll button
+  //onClick -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Rolly the Dice Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>Rolly</h1>
+    <h4>The rolly neat dice generator</h4>
+  </header>
+  <main id="dice-generator">
+    <!-- Below section could be a modal ie click on question mark icon with tooltip 'How to use' -->
+    <section id="instructions">
+      <h5>How to use</h5>
+      <p>Instructions and suggestions here</p>
+      <a href="#">url to dice games list</a>
+    </section>
+    <section id="dice-options">
+      <h5>Select Dice Options</h5>
+      <!-- create js variable for each input value -->
+      <label for="dice-faces">Number of faces</label>
+      <input id="dice-faces" name="dice-faces" type="number" min="2" max="144">
+      <label for="dice-number">Number of dice</label>
+      <input id="dice-number" name="dice-number" type="number" min="1" max="10">
+
+    </section>
+    <!-- decide on placeholder content for results area before initial roll -->
+    <section id="results">Results of dice roll here</section>
+    <section id="phrase">Random phrase here</section>
+    <section id="button-box">
+      <button onclick="rollDice()">Let's Roll!</button>
+    </section>
+  </main>
+  <footer>
+    <p className="credits">
+      built by <a href="https://moondog.co.nz">moondog</a> 2023
+    </p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
+</html>
