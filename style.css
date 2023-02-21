@@ -8,11 +8,10 @@ COLOURS
     yellow #fcde67   
     neon blue #5bccf6
     black #030e12
-    rust #914433
+    vibrant red #FF5722
 
     Alternative colors to try:
         #FFC107 bright orange
-        #FF5722 vibrant red 
         #00E676 bright green 
         #2196F3 light blue 
 */
@@ -46,6 +45,7 @@ footer {
     display: block;
     text-align: center;
     padding: 10px;
+    max-width: 600px;
 }
 
 a {
@@ -75,54 +75,79 @@ h4 {
     text-transform: uppercase;
 }
 
+#instructions {
+    background-color: rgba(0, 0, 0, 0);
+    color: #030e12;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    text-align: center;
+    outline: none;
+    font-family: 'Teko', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 300;
+}
+
+#instructions:hover {
+    color: #5bccf6;
+}
+
+.collapsible:after {
+    content: '\002B';
+    color: #030e12;
+    margin-left: 5px;
+}
+
+.collapsible.active:after {
+    content: "\2212";
+}
+
+.collapsible:after:hover {
+    color: #5bccf6;
+}
+
+.content {
+    background-color: #030e12;
+    color: #ffffff;
+    position: absolute;
+    width: 600px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+article {
+    max-width: 440px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    padding: 20px;
+}
+
 h5 {
     font-size: 1.4rem;
 }
 
-.expandable-article {
-    display: none;
-    color: #ffffff;
-    background-color: #030e12;
-    max-width: 380px;
-    padding: 15px 30px;
-    border-radius: 5px;
-    margin: 0 auto;
-}
-
 ul {
     list-style-type: none;
-    margin: 0 0 20px 0;
-}
-
-.expandable-heading:hover {
-    cursor: pointer;
-    color: #5bccf6;
-}
-
-.expandable-heading::after {
-    content: "\25BC";
-    /* arrow icon */
-    font-size: 1rem;
-    display: inline-block;
-    margin-left: 5px;
-    transform: rotate(0);
-    transition: transform 0.3s;
-}
-
-.expandable-heading.expanded::after {
-    transform: rotate(180deg);
+    margin: 20px 0 20px 0;
 }
 
 #dice-options {
     border: 2px solid;
+    margin: 0 auto;
     padding: 10px 20px 20px;
     border-radius: 10px;
+    width: 500px;
 }
 
 input {
     font-family: 'Teko', sans-serif;
     font-size: 1.4rem;
-    width: 40px;
     padding-left: 10px;
     margin-top: 10px;
 }
@@ -140,11 +165,25 @@ label:last-of-type {
     margin-left: 10px;
 }
 
-#results {
-    font-size: 3rem;
+#dice-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.dice {
+    width: 6rem;
+    height: 6rem;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 5px;
     padding: 20px;
-    color:#FF5722;
+    color: #FF5722;
+    border: none;
     border-radius: 10px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: 0.4s;
 }
 
 #phrase {
@@ -154,7 +193,7 @@ label:last-of-type {
     font-size: 1.4rem;
 }
 
-button {
+#roll {
     border-radius: 10px;
     font-family: 'Teko', sans-serif;
     font-size: 3rem;
@@ -166,13 +205,13 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+#roll:hover {
     color: #ffffff;
     box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
     transform: translateY(-5px);
 }
 
-button:active {
+#roll:active {
     background-color: #FF5722;
 }
 

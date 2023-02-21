@@ -31,23 +31,26 @@ To build:
   <main id="dice-generator">
 
     <!-- Expandable section - still to code js to show content -->
-    <section id="instructions" class="expandable-section">
-      <h5 class="expandable-heading">How to use</h5>
-      <article class="expandable-article">
-        <ul>
-          <li>Select the number of faces for your dice. 
-            This can be as simple as a coin toss (2 faces) 
-            or as complex as 144.</li>
-          <li>Select the number of dice you'd like to roll, from 1 - 10.</li>
-          <li>Click the button to roll the dice and see your results.</li>
-        </ul>
-        <p>Here is a list of dice games for some inspiration:</p>
-        <a href="https://www.awesomedice.com/pages/dice-games-the-ultimate-list">Dice Games</a>
-    </article>    
+    <section>
+      <p><a href="https://www.awesomedice.com/pages/dice-games-the-ultimate-list">Dice Games List</a></p>
+      <button type="button" id="instructions" class="collapsible">
+        <h5>How to use</h5>
+      </button>
+      <div class="content">
+        <article>
+          <ul>
+            <li>- Select the number of faces for your dice.
+              This can be as simple as a coin toss (2 faces)
+              or as complex as 144 faces.</li>
+            <li>- Select the number of dice you'd like to roll, from 1 - 10.</li>
+            <li>- Click the button to roll the dice and see your results.</li>
+          </ul>
+        </article>
+      </div>
     </section>
 
     <section id="dice-options">
-      <h5>Select Dice Options</h5>
+      <h5>Select dice options</h5>
       <!-- create js variable for each input value -->
       <label for="dice-faces">Number of faces:</label>
       <input id="dice-faces" name="dice-faces" type="number" min="2" max="144" step="1" value="2">
@@ -55,23 +58,28 @@ To build:
       <input id="dice-number" name="dice-number" type="number" min="1" max="10" step="1" value="1">
     </section>
 
-    <!-- decide on placeholder content for results area before initial roll -->
-    <section>
-      <h2 id="results">6</h2>
+    <section id="dice-container">
+      <!-- button element class "dice" rendered here -->
     </section>
+
     <section>
-      <quote id="phrase">"I'm on a roll!"</quote>
+      <quote id="phrase">
+        <!-- random phrase rendered here -->
+      </quote>
     </section>
+
     <section id="button-box">
-      <button onclick="rollDice()">Roll Dice</button>
+      <button id="roll" onclick="rollDice()">Roll Dice</button>
     </section>
+
   </main>
+  
   <footer>
     <p className="credits">
       built by <a href="https://moondog.co.nz">Keren Elizabeth</a> 2023
     </p>
   </footer>
-  <script src="script.js"></script>
+
 </body>
 
 </html>
