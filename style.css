@@ -150,6 +150,7 @@ input {
     font-size: 1.4rem;
     padding-left: 10px;
     margin-top: 10px;
+    max-width: 60px;
 }
 
 input:first-of-type {
