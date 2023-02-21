@@ -42,17 +42,12 @@ function getPhrase() {
   document.getElementById("phrase").innerHTML = randomPhrase;
 }
 
-// roll the dice
-function rollDice() {
-  // get value for dice faces from 2 to 144
-  const numFaces = parseInt(document.getElementById("dice-faces").value);
-  // get value for amount of dice from 1 to 10
-  const numDice = parseInt(document.getElementById("dice-number").value);
+// roll dice
+function rollDice(numFaces, numDice) {
   // assign element to output dice
   const diceContainer = document.getElementById("dice-container");
   // clear any previous dice 
   diceContainer.innerHTML = "";
-
 
   // loop through the amount of dice
   for (let i = 0; i < numDice; i++) {
@@ -64,6 +59,19 @@ function rollDice() {
     // add button to the DOM
     diceContainer.appendChild(newDice);
   }
+
   // run function to get the random phrase
-  getPhrase()
+  getPhrase();
 }
+
+// get the button element and add an event listener for click events
+const rollButton = document.getElementById("roll");
+rollButton.addEventListener("click", function() {
+  // get value for dice faces from 2 to 144
+  const numFaces = parseInt(document.getElementById("dice-faces").value);
+  // get value for amount of dice from 1 to 10
+  const numDice = parseInt(document.getElementById("dice-number").value);
+
+  // call the rollDice function with the arguments
+  rollDice(numFaces, numDice);
+});
