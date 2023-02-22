@@ -71,6 +71,14 @@ function rollDice(numFaces, numDice) {
     rollDice(6, numDice);
   });
 
+//change the number of dices when the input is changed
+ const diceNumChange = document.getElementById("dice-number");
+  diceNumChange.addEventListener("change", function() {
+    const numDice = parseInt(document.getElementById("dice-number").value);
+
+    rollDice(6, numDice);
+  });
+
 // get the button element and add an event listener for click events
 const rollButton = document.getElementById("roll");
 rollButton.addEventListener("click", function() {
@@ -81,3 +89,37 @@ rollButton.addEventListener("click", function() {
   // call the rollDice function with the arguments
   rollDice(numFaces, numDice);
 });
+
+function testRollDice() {
+  // Test container
+  const testContainer = document.createElement('div');
+
+  // Test case 1: Check that the rollDice function makes one dice 
+  rollDice(6, 1);
+  // selecting the dice container and all its dice elements
+  const diceContainer = document.getElementById('dice-container');
+  const diceElements = diceContainer.querySelectorAll('.dice');
+  // checking at least one dice has been generated
+  if (diceElements.length >= 1) {
+    console.log('Test case 1 passed');
+  } else {
+    console.error('Test case 1 failed');
+  }
+
+  // Test case 2: Check that the function generates one of the expected numbers for a six-sided dice
+  rollDice(6, 1);
+  // converting the text string on the first dice array element to a number type
+  const diceValue = Number(diceElements[0].textContent);
+  // checking if the number is in the correct range
+  if (diceValue >= 1 && diceValue <= 6) {
+    console.log('Test case 2 passed');
+  } else {
+    console.error('Test case 2 failed');
+  }
+
+  // Clean up after the test
+  diceContainer.innerHTML = '';
+}
+
+// Run the test
+testRollDice();
