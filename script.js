@@ -63,15 +63,7 @@ function rollDice(numFaces, numDice) {
   // run function to get the random phrase
   getPhrase();
 }
-//change the number of dices when the input is changed
- const diceNumChange = document.getElementById("dice-number");
-  diceNumChange.addEventListener("change", function() {
-    const numDice = parseInt(document.getElementById("dice-number").value);
-
-    rollDice(6, numDice);
-  });
-
-//change the number of dices when the input is changed
+//change the number of dice when the input is changed
  const diceNumChange = document.getElementById("dice-number");
   diceNumChange.addEventListener("change", function() {
     const numDice = parseInt(document.getElementById("dice-number").value);
